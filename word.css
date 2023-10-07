@@ -1,0 +1,102 @@
+/* Epitome text animation */
+.words {
+    color: #f7f7f7;
+    font-size: 0;
+    line-height: 1.5;
+    font-family: futura;
+    padding-left: 17rem;
+  }
+  
+  .words span {
+    font-size: 13vw;
+    display: inline-block;
+    animation: move 3s ease-in-out infinite;
+  }
+  
+  @keyframes move {
+    0% {
+      transform: translate(-30%, 0);
+    }
+    50% {
+      text-shadow: 0 25px 50px rgba(0, 0, 0, 0.75);
+    }
+    100% {
+      transform: translate(30%, 0);
+    }
+  }
+  
+  .words span:nth-child(2) {
+    animation-delay: 0.5s;
+  }
+  
+  .words span:nth-child(3) {
+    animation-delay: 1s;
+  }
+  
+  .words span:nth-child(4) {
+    animation-delay: 1.5s;
+  }
+  
+  .words span:nth-child(5) {
+    animation-delay: 2s;
+  }
+  
+  .words span:nth-child(6) {
+    animation-delay: 2.5s;
+  }
+  
+  .words span:nth-child(7) {
+    animation-delay: 3s;
+  }
+  
+
+@media (max-width:600px) {
+    .words {
+        padding-left: 15px;
+    }
+}
+
+
+/* register button */
+
+#register-btn{
+  display: block;
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  font-family:futura;
+  text-decoration: none;
+  color: #3413ac;
+  border: 2px solid #333;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all .35s;
+  text-transform: uppercase;
+  margin-right: 30px;
+}
+
+#register-btn span{
+  position: relative;
+  z-index: 2;
+}
+
+#register-btn:after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #ff003b;
+  transition: all .35s;
+}
+
+#register-btn:hover{
+  color: #f7f7f7;
+}
+
+#register-btn:hover:after{
+  width: 100%;
+}

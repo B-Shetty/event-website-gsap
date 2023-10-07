@@ -1,0 +1,313 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+*::selection{
+    color: #fff;
+    background: #000;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    background: #f7f7f7;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+
+.cursor{
+    height: 150px;
+    width: 150px;
+    background-color: blanchedalmond;
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%,-50%);
+}
+
+#nav{
+    position: fixed;
+    height: 4rem;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    padding-left: 5px;
+}
+
+#nav #left{
+    height: 110px;
+    overflow: hidden;
+    padding-top: 15px;
+    padding-left: 5px;
+}
+#nav #left img{
+    height: 100px;
+    display: block;
+    padding-top: 10px;
+}
+#nav #right{
+    display: flex;
+    align-items: center;
+
+}
+#nav #right #links{
+    padding-right: 50px;
+}
+#nav #right #links #link{
+    font-family: futura;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1em;
+    padding: 25px;
+    color: red;
+    transition: all .35s;
+    text-shadow: 1px 1px 2px #f7f7f7;
+}
+#nav #right #links #link:hover{
+    color: #3413ac;
+}
+#page1{
+    min-height: 100vh;
+    position: relative;
+    padding-top: 10vh;
+    width: 100%;
+}
+
+#page1 h1{
+    line-height: 12vw;
+    font-family: futura,sans-serif;
+    font-size: 13vw;
+    text-transform: uppercase;
+    margin-left: 5rem;
+    padding: 10px;
+    padding-left: 3rem;
+    letter-spacing: -5px;
+    color: #3413ac;
+}
+
+#video-container{
+    height: 100vh;
+    widows: 100%;
+    position: relative;
+}
+
+#video-container video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+#video-container #play{
+    background-color: #ffffff;
+    text-transform: uppercase;
+    padding: 2vw 1.3vw;
+    font-size: 1vw;
+    color: #000;
+    font-family:futura,sans-serif;
+    position: fixed;
+    border-radius: 50%;
+    scale: 0;
+    transform: translate(-50%,-50%);
+}
+
+#page2{
+    height: 100vh;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 3vw 0vw;
+}
+
+#page2 h1{
+    text-align: center;
+    padding-bottom: 30px;
+    font-size: 2em;
+    color: #3413ac;
+}
+
+#page2 .text{
+    max-width: 500px;
+    font-size: 1.05em;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: justify;
+    text-transform: uppercase
+}
+
+#page2 .elem{
+    height: 80%;
+    width: 30%;
+    overflow: hidden;
+    margin-bottom: 2vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 18px;
+}
+
+#page2 .elem img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    scale: 1.1;
+}
+
+/* #page2 .elem .dets{
+    height: 60px;
+    width: 70%;
+    position: absolute;
+    background-color: azure;
+    z-index: 9;
+    border-radius: 18px;
+} */
+
+#page3{
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+#page3 h1{
+    text-align: center;
+    font-size: 2em;
+    font-family: futura;
+    color: #3413ac;
+    text-transform: uppercase;
+    text-shadow: 0 0.5rem 1rem #3413ac;
+}
+
+#page3 .scroller{
+    max-width: 700px;
+    height: 100px;
+    display: grid;
+    place-items: center;
+}
+
+#page3 .inner_scroller{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+#page3 .scroller li{
+    list-style: none;
+    white-space: nowrap;
+    padding: 10px;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-family: futura,sans-serif;
+    background-color: rgb(76, 191, 191);
+    border-radius: 18px;
+    transition: all 900ms;
+    box-shadow: 0 0.5rem 1rem -0.24rem rgb(37, 41, 41);
+}
+#page3 .scroller li:hover{
+    scale: 1.1;
+}
+
+#page3 .scroller[data-animated="true"] {
+    overflow: hidden;
+    border: 4px solid #3413ac;
+    -webkit-mask: linear-gradient(90deg,transparent,#f7f7f7 20%,#f7f7f7 80%,transparent);
+    mask: linear-gradient(90deg,transparent,#f7f7f7 20%,#f7f7f7 80%,transparent);
+}
+
+#page3 .scroller[data-animated="true"] .inner_scroller{
+    flex-wrap: nowrap;
+    width: max-content;
+    animation: scroll var(--_animation-duration,40s) var(--_animation-direction,forwards) linear infinite;
+}
+#page3 .scroller[data-direction="right"] .inner_scroller{
+    --_animation-direction:reverse;
+}
+
+#page3 #img-scroller{
+    height: 300px;
+    max-width: 1000px;
+    border: 4px solid #3413ac;
+}
+#img-scroller img{
+    height: 250px;
+    width: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: all 900ms;
+    box-shadow: 0 0.5rem 1rem -0.24rem rgb(37, 41, 41);
+}
+#img-scroller img:hover{
+    scale: 1.1;
+    border-radius:45px 19px;
+    box-shadow: 0 0.5rem 1rem -0.24rem rgb(1, 2, 2);
+}
+
+@keyframes scroll{
+    to{
+        transform: translate(calc(-50% - 0.5rem));
+    }
+}
+
+/* footer */
+#footer{
+    
+}
+
+#footer .text{
+    font-size: 1.05em;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: justify;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+@media (max-width:600px) {
+    #page1{
+        padding-top: 25vh;
+        min-height: 45vh;
+        width: 100%;
+    }
+    #page1 h1{
+        line-height: 12vw;
+        font-size: 13vw;
+        letter-spacing: 0px;
+    }
+
+    #video-container{
+        height: 50vh;
+        margin-top: 7vw;
+    }
+
+    #page2{
+        height: 100vh;
+        width: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        padding: 7vw 0vw;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+    
+    #page2 .elem{
+        height: 100vh;
+        width: 90%;
+        overflow: hidden;
+        margin-bottom: 2vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    
+    #page2 .elem img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      
+    }
+   
+}
